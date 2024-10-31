@@ -1,5 +1,4 @@
 const express = require('express');
-const studentRoutes = require('./src/student/routes');
 const usersRoutes = require('./src/users/routes');
 
 const app = express();
@@ -12,7 +11,6 @@ app.get('/',(req,res)=>{
 
 
 app.use('/api/v1/users',usersRoutes)
-app.use('/api/v1/students',studentRoutes)
 
 app.listen(port,()=>{
     console.log(`app listening at http://localhost:${port}`);
