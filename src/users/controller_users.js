@@ -35,11 +35,30 @@ pool.query(queries.checkUsernameExists,[username],(error,results)=>{
 });
 
 };
-
+///////////////
+const addSport = (req,res)=>{
+    const {fullname,duration,per_day,star_product,more_info,is_rented,delivery,users_fk}=req.body
+    //check if username exist
+    pool.query(queries.checkfullnameExists,[fullname],(error,results)=>{
+     
+        if(results.rows.length>0){
+            res.send("this product already exists")
+        }
+      //add user to database
+         pool.query(queries.addSport,[fullname,duration,per_day,star_product,more_info,is_rented,delivery,users_fk],(error,results)=>{
+         if(error) throw error;
+         res.status(201).send("sport product added successfully!")
+         console.log("sport product created")
+    
+         })
+    });
+    
+    };
 //////////
 module.exports={
     getUsers,
     getUsersById,
     addUsers,
+    addSport
 }
 
