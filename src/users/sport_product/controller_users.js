@@ -1,4 +1,4 @@
-const pool = require('../../db')
+const pool = require('../../../db')
 const queries = require('./queries_users')
 
 ///////////////
@@ -35,12 +35,9 @@ const addSport = (req,res)=>{
  
             if(results.rows.length>0){
                 res.send("Username already exists")
+            return
             }
             
-             pool.query(queries.checkOwnerEmailExists,[email],(error,results)=>{
-                 if(results.rows.length>0){
-                     res.send("OwnerEmail already exists")
-                 }
                 
             //add Owner to database
             pool.query(queries.addOwner,[fullname,email,username,password,birthdate],(error,results)=>{
@@ -48,7 +45,7 @@ const addSport = (req,res)=>{
              res.status(201).send("owner added successfully!")
              console.log("owner created")          
          })  
-        })
+        
         });
 
          })         
