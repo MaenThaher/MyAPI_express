@@ -56,20 +56,34 @@ const addSport = (req,res)=>{
 
 
 //////////
+//delete depend on sp_id
 const delete_sport_product=(req,res)=>{
-    const {id}=req.params
-    pool.query(queries.deleteSportProduct,[id],(error,results)=>{
+    const {id_pr}=req.params
+
+    pool.query(queries.deleteSportProduct,[id_pr],(error,results)=>{
         if(error) throw error;
       
         res.send("product deleted successfully!")
     })
 }
-
+/////////////////////
+const patchProduct =(req,res)=>{
+    const {id_pr}=req.params
+    const {fullname,duration,per_day,star_product,more_info,is_rented,delivery}=req.body
+ //res.send("fullname: " + fullname+" duration: " + duration + " per day: " + per_day + " star product: " + star_product+ " more info: " + more_info + " is_rented: " + is_rented  + "delivery: " + delivery)
+ //res.send("id_pr : "+id_pr)  
+ pool.query(queries.patchProduct,[id_pr,fullname,duration,per_day,star_product,more_info,is_rented,delivery],(error,results)=>{
+        if(error) throw error;
+      
+        res.send("product updated successfully!")
+    })
+}
 
 
 ////////////
 module.exports={
     addSport,
-    
+    delete_sport_product,
+    patchProduct
 }
 
