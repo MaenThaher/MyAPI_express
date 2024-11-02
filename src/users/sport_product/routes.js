@@ -5,7 +5,8 @@ const router = Router()
 
 
 router.post('/:id/sport_product',controller.addSport)
-router.post("/:id/notice",controller.addNotice)
+router.delete('/:id/sport_product/:id_pr')
+router.delete('/:id')
 module.exports = router
 
 

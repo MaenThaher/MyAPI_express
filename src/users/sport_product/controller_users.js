@@ -11,7 +11,8 @@ const addSport = (req,res)=>{
             res.send("this product already exists")
          }
       //add user to database
-         pool.query(queries.addSport,[fullname,duration,per_day,star_product,more_info,is_rented,delivery,users_fk],(error,results)=>{
+
+      pool.query(queries.addSport,[fullname,duration,per_day,star_product,more_info,is_rented,delivery,users_fk],(error,results)=>{
          if(error) throw error;
          
          pool.query(queries.getUsersById,[users_fk],(error,results) => {
@@ -52,13 +53,23 @@ const addSport = (req,res)=>{
          })
     });    
     };
+
+
 //////////
-const addNotice=(req,res)=>{
-    res.send("not created functionalty of addNotice")
+const delete_sport_product=(req,res)=>{
+    const {id}=req.params
+    pool.query(queries.deleteSportProduct,[id],(error,results)=>{
+        if(error) throw error;
+      
+        res.send("product deleted successfully!")
+    })
 }
-//////////
+
+
+
+////////////
 module.exports={
     addSport,
-    addNotice
+    
 }
 
