@@ -70,20 +70,28 @@ const delete_sport_product=(req,res)=>{
 const patchProduct =(req,res)=>{
     const {id_pr}=req.params
     const {fullname,duration,per_day,star_product,more_info,is_rented,delivery}=req.body
- //res.send("fullname: " + fullname+" duration: " + duration + " per day: " + per_day + " star product: " + star_product+ " more info: " + more_info + " is_rented: " + is_rented  + "delivery: " + delivery)
- //res.send("id_pr : "+id_pr)  
- pool.query(queries.patchProduct,[id_pr,fullname,duration,per_day,star_product,more_info,is_rented,delivery],(error,results)=>{
-        if(error) throw error;
-      
+ 
+ 
+    pool.query(queries.patchProduct,[id_pr,fullname,duration,per_day,star_product,more_info,is_rented,delivery],(error,results)=>{
+        if(error) throw error;      
+ 
         res.send("product updated successfully!")
     })
 }
-
+/////////////////////
+const getProductForUser = (req,res)=>{
+    const {id_user}=req.params
+    pool.query(queries.getProductForUser,[id_user],(error,results)=>{
+        if(error) throw error;        
+        res.status(200).json(results.rows);
+    })
+}
 
 ////////////
 module.exports={
     addSport,
     delete_sport_product,
-    patchProduct
+    patchProduct,
+    getProductForUser
 }
 
