@@ -1,7 +1,13 @@
 const pool = require('../../../db')
 const queries = require('./queries_transaction.js')
 
-
+const getAllTransactions= (req,res)=>{
+    pool.query(queries.getAllTransactions,(error,results)=>{
+        if(error) throw error;        
+        res.status(200).json(results.rows);
+    })
+ 
+}
 const getSpesificTrans =(req,res)=>{
 const {id_trans} = req.params
 
@@ -48,6 +54,7 @@ res.send("id_trans: "+id_trans+" user_owner: "+user_owner)
 
 
 module.exports = {
+    getAllTransactions,
     getSpesificTrans,
     addSpesificTransaction,
     deleteSpesificTransaction,
