@@ -34,8 +34,21 @@ const deleteSpesificTransaction = (req,res)=>{
     });
 }
 
+const updateSpesificTransaction = (req,res)=>{
+    const {id_trans, user_rent,user_owner,start_date,end_date,fees_platform,delivery,fee_from_renter}=req.body
+
+    pool.query(queries.updateSpesificTransactions,[id_trans,user_rent,user_owner,start_date,end_date,fees_platform,delivery,fee_from_renter], (error,results) => {
+        if (error) throw error;
+        res.status(200).json("updated successfully"); 
+
+    })        
+}
+
+
+
 module.exports = {
     getSpesificTrans,
     addSpesificTransaction,
-    deleteSpesificTransaction
+    deleteSpesificTransaction,
+    updateSpesificTransaction
 }
