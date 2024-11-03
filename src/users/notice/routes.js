@@ -5,4 +5,8 @@ const router = Router()
 
 router.get('/',controller.getAll_notice)
 router.get('/:id_notice',controller.getSpesific_notice)
+router.post('/',controller.addSpesific_notice)
+
+
+
 module.exports = router

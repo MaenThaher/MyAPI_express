@@ -17,7 +17,16 @@ const getSpesific_notice = (req,res)=>{
     })
 }
 
+const addSpesific_notice = (req,res)=>{
+    const {transt_id_fk,note_owner,note_rented,punctaulity_day,star_from_rented,star_from_owner}=req.body
+    pool.query(queries.addSpesificNotice,[transt_id_fk,note_owner,note_rented,punctaulity_day,star_from_rented,star_from_owner],(error,results)=>{
+        if(error) throw error;
+        res.status(200).json("added successfully");
+    })
+}
 module.exports = {
     getAll_notice,
-    getSpesific_notice
+    getSpesific_notice,
+    addSpesific_notice
+
 }
