@@ -25,8 +25,17 @@ const addSpesificTransaction = (req,res)=>{
 
 }
 
+const deleteSpesificTransaction = (req,res)=>{
+    const {id_trans} = req.params
+    pool.query(queries.deleteSpesificTransactions, [id_trans], (error, results) => {
+        if (error) throw error;
+        res.status(200).json("delted successfully");
+        
+    });
+}
 
 module.exports = {
     getSpesificTrans,
-    addSpesificTransaction
+    addSpesificTransaction,
+    deleteSpesificTransaction
 }
