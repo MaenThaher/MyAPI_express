@@ -5,7 +5,6 @@ const queries = require('./queries_onuser')
 
 const getLogIn = (req,res) => {
  const {username,password}=req.body
- res.setHeader('Content-Type', 'text/plain');
  
  pool.query(queries.getLogIn ,(error,results)=>{
  if(error) throw error;

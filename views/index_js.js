@@ -16,10 +16,14 @@ function check_login(){
     //     console.error('Fetch error:', error); // Handle errors
     // });
 //////////
+
 const loginData = {
     username:"omar",
     password:"22222"
 }
+
+alert("username: "+loginData.username)
+alert("password: "+loginData.password)
 fetch('http://localhost:3000/api/users/onuser/login',
     {method:'POST',
     headers:{
@@ -36,10 +40,13 @@ fetch('http://localhost:3000/api/users/onuser/login',
     //       return response.json(); // Parse JSON response
 
 })
-.then(data => {
-    alert("data is : "+data)
 
-    console.log(data); // Handle the data
+.then(data => {
+
+
+    if(data ==="true"){
+        window.location.href ="/views/register.html"
+    }
 
 })
 .catch(error => {
