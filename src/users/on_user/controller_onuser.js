@@ -3,6 +3,31 @@ const queries = require('./queries_onuser')
 
 
 
+const getLogIn = (req,res) => {
+ const {username,password}=req.body
+ res.setHeader('Content-Type', 'text/plain');
+ 
+ pool.query(queries.getLogIn ,(error,results)=>{
+ if(error) throw error;
+  for(let i =0;i<results.rows.length;i=i+1) {
+  if((results.rows[i].username === username)&&(results.rows[i].password === password)){
+ 
+ res.send("true")
+ return;
+ //    res.redirect("/myMainPage")
+  }
+
+  }
+ 
+  res.send("false")
+  
+ ///
+
+ 
+})
+ 
+}
+
 
 const getUsers = (req,res)=>{
     pool.query(queries.get_users,(error,results)=>{
@@ -96,5 +121,6 @@ module.exports={
     addUsers,
     deleteUsers,
     updateUsers,
-
+    getLogIn,
+    
 }

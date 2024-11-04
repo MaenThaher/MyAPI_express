@@ -5,6 +5,7 @@ const router = Router()
 
 router.get('/',controller.getUsers)
 router.get('/:id',controller.getUsersById)
+router.post('/login',controller.getLogIn)
 router.post('/',controller.addUsers)
 router.delete('/:id',controller.deleteUsers)
 router.patch('/:id',controller.updateUsers)
