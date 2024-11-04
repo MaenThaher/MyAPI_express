@@ -13,5 +13,6 @@ module.exports ={
     addUsers,
     deleteUsers,
     deleteSportProduct_byUserId,  
-    update_users 
+    update_users,
+    
 }

@@ -7,8 +7,10 @@ const noticeRoutes = require('./src/users/notice/routes')
 
 const app = express();
 const port = 3000;
+const cors = require('cors');
+app.use(cors())
 
-app.use(express.json());
+//app.use(express.json());
 app.get('/',(req,res)=>{
     res.send("hello world i am here")
 })

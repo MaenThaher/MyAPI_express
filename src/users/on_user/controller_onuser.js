@@ -3,6 +3,7 @@ const queries = require('./queries_onuser')
 
 
 
+
 const getUsers = (req,res)=>{
     pool.query(queries.get_users,(error,results)=>{
         if(error) throw error;        
@@ -94,5 +95,6 @@ module.exports={
     getUsersById,
     addUsers,
     deleteUsers,
-    updateUsers
+    updateUsers,
+
 }
