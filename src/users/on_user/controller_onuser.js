@@ -5,7 +5,7 @@ const queries = require('./queries_onuser')
 
 const getLogIn = (req,res) => {
  const {username,password}=req.body
- 
+//  res.send("username in getLog in is: "+username)
  pool.query(queries.getLogIn ,(error,results)=>{
  if(error) throw error;
   for(let i =0;i<results.rows.length;i=i+1) {

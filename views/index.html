@@ -10,23 +10,31 @@
 <body>
     <div class="container">
         <h2>Login</h2>
-        <form >
+        
             <div class="input-group">
                 <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="username_id"  required>
             </div>
             <div class="input-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
+                <input type="text" id="password_id"  required>
             </div>
-            <button type="submit" id="submit_button">Login</button>
-        </form>
+            <button type="button" id="submit_button" >Login</button>
+        
         <p class="message">Not registered? <a href="register.html">Create an account</a></p>
     </div>
-</body>
-<script src="index_js.js"></script>
-<script>
-    document.getElementById('submit_button').addEventListener('click',check_login())
-</script>
 
+
+    <script src="index_js.js"></script>
+    <script>
+        const u = document.getElementById('username_id')
+        const p = document.getElementById('password_id')
+      document.getElementById('submit_button').onclick= function(){
+    check_login(u.value,p.value)
+   }
+   
+   </script>
+</body>
+
+ 
 </html>

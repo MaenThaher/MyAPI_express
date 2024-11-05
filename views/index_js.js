@@ -1,4 +1,4 @@
-function check_login(){
+function check_login(u,p){
     // fetch('http://localhost:3000/api/users/onuser/login') // Replace '/api/data' with your actual endpoint
     // .then(response => {
     //     if (!response.ok) {
@@ -18,9 +18,10 @@ function check_login(){
 //////////
 
 const loginData = {
-    username:"omar",
-    password:"22222"
+    username:u,
+    password:p
 }
+
 
 alert("username: "+loginData.username)
 alert("password: "+loginData.password)
@@ -43,14 +44,14 @@ fetch('http://localhost:3000/api/users/onuser/login',
 
 .then(data => {
 
-
+ alert("data is : "+data)
     if(data ==="true"){
-        window.location.href ="/views/register.html"
+        window.location.href ="/views/MainPage.html"
     }
 
 })
 .catch(error => {
-
+ alert("wrong")
     console.error('Fetch error:', error); // Handle errors
 });
 
