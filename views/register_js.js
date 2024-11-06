@@ -26,7 +26,7 @@ const regData = {
     email:e,
     username:u,
     password:p,
-    BirthDate:bd,
+    birthdate:bd,
 
 }
 
@@ -34,7 +34,7 @@ alert("fullname: "+regData.fullname)
 alert("email: "+regData.email)
 alert("username: "+regData.username)
 alert("password: "+regData.password)
-alert("BirthDate: "+regData.BirthDate)
+alert("BirthDate: "+regData.birthdate)
 
 
 fetch('http://localhost:3000/api/users/onuser',
