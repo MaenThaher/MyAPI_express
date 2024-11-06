@@ -3,10 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="MainPage_css.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>My Main Page!</h1>
+<div id="container">
+    <!-- ////////////////////////My Bar -->
+<div id="MyBar">
+    <nav class="navbar">
+        <div class="logo">
+          <a href="#"><img src="./images/ASW_LogoIcon.png" alt=""></a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamb" id="hamb">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    
 
+</div>
+<!-- ///////////////////////  /My Bar -->
+
+<div id="MyCenter">
+
+
+    <div class="slider-container">
+        <div class="slider">
+          <!-- ////////// -->
+            <div class="slide">
+                <div class="product-card">
+                <img src="./images/runner.png" alt="Product Image" class="product-image">
+                <div class="product-info">
+                  <h3 class="product-title">Product Name</h3>
+                  <p class="product-description">This is a short description of the product. It's a great choice for your needs.</p>
+                  <p class="product-price">$49.99</p>
+                  <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+          <!-- ////////// -->
+          <div class="slide"><div class="product-card">
+            <img src="./images/boxing.jpg" alt="Product Image" class="product-image">
+            <div class="product-info">
+              <h3 class="product-title">Product Name</h3>
+              <p class="product-description">This is a short description of the product. It's a great choice for your needs.</p>
+              <p class="product-price">$49.99</p>
+              <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+          </div></div>
+          <!-- ////////// -->
+          <div class="slide"><div class="product-card">
+            <img src="https://via.placeholder.com/300" alt="Product Image" class="product-image">
+            <div class="product-info">
+              <h3 class="product-title">Product Name</h3>
+              <p class="product-description">This is a short description of the product. It's a great choice for your needs.</p>
+              <p class="product-price">$49.99</p>
+              <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+          </div></div>
+          <!-- /////////// -->
+          <div class="slide"><div class="product-card">
+            <img src="https://via.placeholder.com/300" alt="Product Image" class="product-image">
+            <div class="product-info">
+              <h3 class="product-title">Product Name</h3>
+              <p class="product-description">This is a short description of the product. It's a great choice for your needs.</p>
+              <p class="product-price">$49.99</p>
+              <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+          </div></div>
+          <!-- /////////// -->
+        </div>
+    
+        <button class="prev" id="prev">&#10094;</button>
+        <button class="next" id="next">&#10095;</button>
+      </div>
+
+
+
+
+</div>
+
+
+<div id="MyFooter"></div>
+</div>
+
+<script src="MainPage_js.js"></script> 
+   
 </body>
 </html>
