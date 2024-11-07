@@ -10,15 +10,16 @@ const getLogIn = (req,res) => {
  if(error) throw error;
   for(let i =0;i<results.rows.length;i=i+1) {
   if((results.rows[i].username === username)&&(results.rows[i].password === password)){
- 
- res.send("true")
+  
+ //res.send(""+results.rows[i].user_id)
+ res.send(""+results.rows[i].user_id)
  return;
  //    res.redirect("/myMainPage")
   }
 
   }
  
-  res.send("false")
+  res.send("-1")
   
  ///
 

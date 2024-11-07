@@ -5,7 +5,7 @@ const addUsers = "insert into users(fullname,email,username,password,birthdate) 
 const deleteUsers = "delete from users where user_id = $1"
 const deleteSportProduct_byUserId = "delete from sport_product where users_fk = $1"
 const update_users = "update users set user_id = user_id,fullname=$2,email=$3,username=$4,password=$5,birthdate=$6 where user_id=$1"
-const getLogIn = "select username,password from users"
+const getLogIn = "select user_id,username,password from users"
 module.exports ={
     get_users,
     getUsersById,

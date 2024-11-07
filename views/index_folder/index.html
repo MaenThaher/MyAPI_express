@@ -21,16 +21,18 @@
             </div>
             <button type="button" id="submit_button" >Login</button>
         
-        <p class="message">Not registered? <a href="register.html">Create an account</a></p>
+        <p class="message">Not registered? <a href="../register_folder/register.html">Create an account</a></p>
     </div>
 
 
-    <script src="index_js.js"></script>
-    <script>
+    <script src="index_js.js" type="module"></script>
+    <script type="module">
         const u = document.getElementById('username_id')
         const p = document.getElementById('password_id')
-      document.getElementById('submit_button').onclick= function(){
-    check_login(u.value,p.value)
+        import { check_login } from '../index_folder/index_js.js';
+        document.getElementById('submit_button').onclick= function(){
+    alert("12")
+        check_login(u.value,p.value)
    }
    
    </script>

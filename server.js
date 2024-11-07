@@ -4,7 +4,6 @@ const onuserRoutes = require('./src/users/on_user/routes')
 const transactionRoutes = require('./src/users/transaction/routes')
 const noticeRoutes = require('./src/users/notice/routes')
 
-
 const app = express();
 const port = 3000;
 const cors = require('cors');

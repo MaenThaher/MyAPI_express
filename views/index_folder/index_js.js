@@ -1,4 +1,5 @@
-function check_login(u,p){
+export let user_id =-1;
+export function check_login(u,p){
     // fetch('http://localhost:3000/api/users/onuser/login') // Replace '/api/data' with your actual endpoint
     // .then(response => {
     //     if (!response.ok) {
@@ -16,6 +17,7 @@ function check_login(u,p){
     //     console.error('Fetch error:', error); // Handle errors
     // });
 //////////
+
 if(u == "" || p == ""){
     alert("Please fill all fields")
     return ;
@@ -51,8 +53,11 @@ fetch('http://localhost:3000/api/users/onuser/login',
 .then(data => {
 
  alert("data is : "+data)
-    if(data ==="true"){
-        window.location.href ="/views/MainPage_folder/MainPage.html"
+ 
+ if(data!="-1"){
+alert("inside data true")
+        user_id = data;
+        window.location.href ="../MainPage_folder/MainPage.html"
     }
 
 })
@@ -62,4 +67,9 @@ fetch('http://localhost:3000/api/users/onuser/login',
 });
 
 }
+
+
+// ---------------------------------
+
+  
 

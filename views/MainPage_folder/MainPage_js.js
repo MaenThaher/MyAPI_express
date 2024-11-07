@@ -2,6 +2,7 @@
 const hamburger = document.getElementById('hamb');
 const navLinks = document.querySelector('.nav-links');
 
+
 hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('active');
 });
@@ -46,5 +47,6 @@ prevButton.addEventListener('click', () => {
 // Auto-slide every 3 seconds
 setInterval(() => {
   goToSlide(currentSlide + 1);
-}, 3000);
+},3000);
+
 
