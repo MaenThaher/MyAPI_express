@@ -58,7 +58,7 @@ fetch('http://localhost:3000/api/users/onuser',
 
  alert("data is : "+data)
     if(data ==="true"){
-        window.location.href ="/views/MainPage.html"
+        window.location.href ="/views/MainPage_profile/MainPage.html"
     }
 
 })
