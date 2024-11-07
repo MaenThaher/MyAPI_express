@@ -8,8 +8,9 @@ const addSport = (req,res)=>{
     pool.query(queries.checkfullnameExists,[fullname],(error,results)=>{
      
          if(results.rows.length>0){
-            res.send("this product already exists")
+            res.send("-1")
          }
+         
       //add user to database
 
       pool.query(queries.addSport,[fullname,duration,per_day,star_product,more_info,is_rented,delivery,users_fk],(error,results)=>{
@@ -17,7 +18,7 @@ const addSport = (req,res)=>{
          
          pool.query(queries.getUsersById,[users_fk],(error,results) => {
         //    const {fullname,email,username,password,birthdate}=results.rows
-//        res.send(results.rows[0])  
+      //res.send(results.rows[0])  
          const  fullname = results.rows[0].fullname
           const  email = results.rows[0].email
          const   username = results.rows[0].username

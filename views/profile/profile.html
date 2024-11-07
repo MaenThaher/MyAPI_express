@@ -17,11 +17,68 @@
           <div id="more-info" class="more-info">
             <p><strong>Age:</strong> 29</p>
             <p><strong>Location:</strong> San Francisco, CA</p>
-            <p><strong>Hobbies:</strong> Traveling, Photography, Coding</p>
+            <p><strong>Hobbies:</strong> Traveling, Photography, Coding</p>         
+          </div>
+          <button id="addProduct_button">Add Product</button>
+       
+          <div class="input-group">
+            <label for="fullname">fullname</label>
+            <input type="text" id="fullname_id"  required>
+            
+            <div class="input-group">
+              <label for="duration">duration</label>
+              <input type="text" id="duration_id"  required>
+          </div><div class="input-group">
+
+            <label for="per_day">Per Day</label>
+            <input type="text" id="per_day_id"  required>
+        </div>
+        
+        <div class="input-group">
+          <label for="star_product">star_product</label>
+          <input type="text" id="star_product_id"  required>
+      </div><div class="input-group">
+        <label for="more_info">more_info</label>
+        <input type="text" id="more_info_id"  required>
+    </div>
+    <div class="input-group">
+     
+      <label for="is_rented">is_rented</label>
+      <input type="text" id="is_rented_id"  required>
+  </div>
+  <div class="input-group">
+    <label for="delivery">delivery</label>
+    <input type="text" id="delivery_id"  required>
+</div>
+<div class="input-group">
+  <label for="users_fk">users_fk</label>
+  <input type="text" id="users_fk_id"  required>
+</div>
           </div>
         </div>
       </div>
 
 </body>
-<script src="profile_js.js"></script>
+<script  src="profile_js.js"></script>
+
+<script>
+const f = document.getElementById("fullname_id")
+const d = document.getElementById("duration_id")
+const p = document.getElementById("per_day_id")
+const s = document.getElementById("star_product_id")
+const m = document.getElementById("more_info_id")
+const i = document.getElementById("is_rented_id")
+const del = document.getElementById("delivery_id")
+const u = document.getElementById("users_fk_id")
+//import { addProduct } from './profile_js.js';
+   
+document.getElementById('addProduct_button').onclick = function(){
+  addProduct(f.value,d.value,p.value,s.value,m.value,i.value,del.value,u.value)
+};
+
+
+
+</script>
+
+
 </html>
