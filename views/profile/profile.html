@@ -54,6 +54,12 @@
   <label for="users_fk">users_fk</label>
   <input type="text" id="users_fk_id"  required>
 </div>
+
+<div class="input-group">
+  <label for="image_url">image_url</label>
+  <input type="text" id="image_url_id"  required>
+</div>
+
           </div>
         </div>
       </div>
@@ -70,10 +76,12 @@ const m = document.getElementById("more_info_id")
 const i = document.getElementById("is_rented_id")
 const del = document.getElementById("delivery_id")
 const u = document.getElementById("users_fk_id")
+const i_url = document.getElementById("image_url_id")
+
 //import { addProduct } from './profile_js.js';
    
 document.getElementById('addProduct_button').onclick = function(){
-  addProduct(f.value,d.value,p.value,s.value,m.value,i.value,del.value,u.value)
+  addProduct(f.value,d.value,p.value,s.value,m.value,i.value,del.value,u.value,i_url.value)
 };
 
 

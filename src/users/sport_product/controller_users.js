@@ -3,19 +3,19 @@ const queries = require('./queries_users')
 
 ///////////////
 const addSport = (req,res)=>{
-    const {fullname,duration,per_day,star_product,more_info,is_rented,delivery,users_fk}=req.body
+    const {fullname,duration,per_day,star_product,more_info,is_rented,delivery,users_fk,image_url}=req.body
     //check if username exist
     pool.query(queries.checkfullnameExists,[fullname],(error,results)=>{
-     
-         if(results.rows.length>0){
-            res.send("-1")
-         }
+      
+        //  if(results.rows.length>0){
+        //     res.send("-5")
+        //     return
+        //  }
          
       //add user to database
 
-      pool.query(queries.addSport,[fullname,duration,per_day,star_product,more_info,is_rented,delivery,users_fk],(error,results)=>{
+      pool.query(queries.addSport,[fullname,duration,per_day,star_product,more_info,is_rented,delivery,users_fk,image_url],(error,results)=>{
          if(error) throw error;
-         
          pool.query(queries.getUsersById,[users_fk],(error,results) => {
         //    const {fullname,email,username,password,birthdate}=results.rows
       //res.send(results.rows[0])  
@@ -35,12 +35,14 @@ const addSport = (req,res)=>{
  // res.send("here 67")
  if(error) throw error;
  
-            if(results.rows.length>0){
-                res.send("Username already exists")
+         if(results.rows.length>0){
+            res.send("-5")
             return
-            }
-            
-                
+         }
+ 
+
+
+
             //add Owner to database
             pool.query(queries.addOwner,[fullname,email,username,password,birthdate],(error,results)=>{
              if(error) throw error;
@@ -68,6 +70,14 @@ const delete_sport_product=(req,res)=>{
     })
 }
 /////////////////////
+const getAllProduct =(req,res)=>{
+    pool.query(queries.getAllProducts,(error,results)=>{
+        if(error) throw error;   
+         // res.send("inside getAllProducts")
+        res.status(200).json(results.rows);
+    })
+}
+////////////////////
 const patchProduct =(req,res)=>{
     const {id_pr}=req.params
     const {fullname,duration,per_day,star_product,more_info,is_rented,delivery}=req.body
@@ -93,7 +103,8 @@ module.exports={
     addSport,
     delete_sport_product,
     patchProduct,
-    getProductForUser
+    getProductForUser,
+    getAllProduct
 }
 
 

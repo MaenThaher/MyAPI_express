@@ -3,13 +3,9 @@
 // alert("user id : "+user_id_export)
  
 
- function addProduct(f,d,p,s,m,i,del,u){
+ function addProduct(f,d,p,s,m,i,del,u,i_url){
     
     
-    if(u == "" || p == "" || s == "" || m == "" || i == "" || del == "" || f == "" || d == "" ){
-        alert("Please fill all fields")
-        return ;
-    }
     
     const productData = {
         fullname:f,
@@ -19,7 +15,8 @@
         more_info:m,
         is_rented:i,
         delivery:del,
-        users_fk:u
+        users_fk:u,
+        image_url:i_url
     }
     
     
@@ -31,9 +28,10 @@
     alert("is_rented: "+productData.is_rented)
     alert("delivery: "+productData.delivery)
     alert("users_fk: "+productData.users_fk)
+    alert("image_url: "+productData.image_url)    
     
-    
-    fetch('http://localhost:3000/api/users/onuser/login',
+
+    fetch(`http://localhost:3000/api/users/sport/${u}/sport_product`,
         {method:'POST',
         headers:{
         'Content-Type': 'application/json',
@@ -53,13 +51,10 @@
     .then(data => {
     
      alert("data in profile  is : "+data)
-     
-     if(data!="-1"){
-    alert("inside data true")
-            user_id = data;
-            window.location.href ="../MainPage_folder/MainPage.html"
-        }
-    
+      
+    window.location.href ="../MainPage_folder/MainPage.html"          
+    return        
+                      
     })
     .catch(error => {
      alert("wrong")
